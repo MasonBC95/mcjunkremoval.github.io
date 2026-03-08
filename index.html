@@ -114,7 +114,7 @@
         <div class="section-container">
             <h2>Get Your Free Quote</h2>
             <p class="section-sub">Fill out the form below and we'll get back to you fast — usually within the hour.</p>
-            <div class="form-wrapper">
+            <form class="form-wrapper" action="https://formspree.io/f/mqeyekbe" method="POST" enctype="multipart/form-data">
                 <div class="form-group">
                     <label for="name">Your Name</label>
                     <input type="text" id="name" placeholder="John Smith">
@@ -156,9 +156,9 @@
                         <div id="file-count" class="file-count"></div>
                     </div>
                 </div>
-                <button class="btn-submit" onclick="handleSubmit()">Send My Quote Request</button>
+                <button type="submit" class="btn-submit">Send My Quote Request</button>
                 <p class="disclaimer">⚠️ All online quotes are estimates based on the information provided. Final pricing is confirmed on-site once our team assesses the actual volume, weight, and accessibility of your items. We'll always walk you through the final price before we begin — no surprises.</p>
-            </div>
+            </form>
             <div id="form-success" style="display:none;">
                 <h3>✅ Got it! We'll be in touch shortly.</h3>
                 <p>In the meantime, feel free to text us photos of your items at <strong>‪‪(470) 485-3448‬</strong> to speed up your quote.</p>
@@ -195,17 +195,6 @@
             if (count > 0) {
                 display.textContent = `✅ ${count} photo${count > 1 ? 's' : ''} selected`;
             }
-        }
-        function handleSubmit() {
-            const name = document.getElementById('name').value;
-            const phone = document.getElementById('phone').value;
-            const description = document.getElementById('description').value;
-            if (!name || !phone || !description) {
-                alert('Please fill in at least your name, phone number, and what you need removed.');
-                return;
-            }
-            document.querySelector('.form-wrapper').style.display = 'none';
-            document.getElementById('form-success').style.display = 'block';
         }
     </script>
 
