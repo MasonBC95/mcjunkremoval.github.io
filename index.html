@@ -117,27 +117,27 @@
             <form class="form-wrapper" action="https://formspree.io/f/mqeyekbe" method="POST">
                 <div class="form-group">
                     <label for="name">Your Name</label>
-                    <input type="text" id="name" placeholder="John Smith">
+                    <input type="text" id="name" name="name" placeholder="John Smith">
                 </div>
                 <div class="form-group">
                     <label for="phone">Phone Number</label>
-                    <input type="tel" id="phone" placeholder="(770) 555-0000">
+                    <input type="tel" id="phone" name="phone" placeholder="(770) 555-0000">
                 </div>
                 <div class="form-group">
                     <label for="email">Email Address</label>
-                    <input type="email" id="email" placeholder="john@email.com">
+                    <input type="email" id="email" name="email" placeholder="john@email.com">
                 </div>
                 <div class="form-group">
                     <label for="city">City / Area</label>
-                    <input type="text" id="city" placeholder="Austell, GA">
+                    <input type="text" id="city" name="city" placeholder="Austell, GA">
                 </div>
                 <div class="form-group full-width">
                     <label for="description">What do you need removed?</label>
-                    <textarea id="description" rows="4" placeholder="Describe what you need hauled away. The more detail, the better — or text us photos at ‪‪(470) 485-3448‬!"></textarea>
+                    <textarea id="description" name="description" rows="4" placeholder="Describe what you need hauled away. The more detail, the better — or text us photos at (470) 485-3448!"></textarea>
                 </div>
                 <div class="form-group full-width">
                     <label for="timing">When do you need this done?</label>
-                    <select id="timing">
+                    <select id="timing" name="timing">
                         <option value="">-- Select a timeframe --</option>
                         <option>Today if possible</option>
                         <option>Within the next few days</option>
@@ -149,7 +149,7 @@
                 <div class="form-group full-width">
                     <label>Upload Photos of Your Items (optional but recommended)</label>
                     <div class="upload-area" onclick="document.getElementById('photos').click()">
-                        <input type="file" id="photos" accept="image/*" multiple style="display:none;" onchange="handleFileSelect(this)">
+                        <input type="file" id="photos" name="photos" accept="image/*" multiple style="display:none;" onchange="handleFileSelect(this)">
                         <div class="upload-icon">📸</div>
                         <div class="upload-text">Tap to Upload Photos</div>
                         <div class="upload-subtext">The more we see, the more accurate your quote!</div>
@@ -161,7 +161,7 @@
             </form>
             <div id="form-success" style="display:none;">
                 <h3>✅ Got it! We'll be in touch shortly.</h3>
-                <p>In the meantime, feel free to text us photos of your items at <strong>‪‪(470) 485-3448‬</strong> to speed up your quote.</p>
+                <p>In the meantime, feel free to text us photos of your items at <strong>(470) 485-3448</strong> to speed up your quote.</p>
             </div>
         </div>
     </section>
