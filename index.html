@@ -147,13 +147,12 @@
                     </select>
                 </div>
                 <div class="form-group full-width">
-                    <label>Upload Photos of Your Items (optional but recommended)</label>
-                    <div class="upload-area" onclick="document.getElementById('photos').click()">
-                        <input type="file" id="photos" name="photos" accept="image/*" multiple style="display:none;" onchange="handleFileSelect(this)">
-                        <div class="upload-icon">📸</div>
-                        <div class="upload-text">Tap to Upload Photos</div>
-                        <div class="upload-subtext">The more we see, the more accurate your quote!</div>
-                        <div id="file-count" class="file-count"></div>
+                    <div class="photo-callout">
+                        <div class="photo-callout-icon">📸</div>
+                        <div class="photo-callout-text">
+                            <strong>Have photos of your items?</strong>
+                            <p>After submitting, we'll reach out and you can text photos directly to <strong>(470) 485-3448</strong> — this helps us give you the most accurate quote possible!</p>
+                        </div>
                     </div>
                 </div>
                 <button type="submit" class="btn-submit">Send My Quote Request</button>
@@ -188,15 +187,7 @@
         </div>
     </footer>
 
-    <script>
-        function handleFileSelect(input) {
-            const count = input.files.length;
-            const display = document.getElementById('file-count');
-            if (count > 0) {
-                display.textContent = `✅ ${count} photo${count > 1 ? 's' : ''} selected`;
-            }
-        }
-    </script>
+    
 
 </body>
 </html>

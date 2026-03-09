@@ -490,43 +490,32 @@ footer {
     margin-top: 4px;
 }
 
-.upload-area {
-    border: 2px dashed #f5a623;
-    border-radius: 12px;
-    padding: 35px 20px;
-    text-align: center;
-    cursor: pointer;
-    transition: background 0.2s, transform 0.2s;
-    background: rgba(245, 166, 35, 0.05);
+.photo-callout {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    background: rgba(245, 166, 35, 0.08);
+    border: 1px solid rgba(245, 166, 35, 0.3);
+    border-radius: 10px;
+    padding: 20px;
 }
 
-.upload-area:hover {
-    background: rgba(245, 166, 35, 0.12);
-    transform: translateY(-2px);
+.photo-callout-icon {
+    font-size: 2rem;
+    flex-shrink: 0;
 }
 
-.upload-icon {
-    font-size: 2.5rem;
-    margin-bottom: 10px;
+.photo-callout-text {
+    font-size: 0.92rem;
+    color: #aab8d4;
+    line-height: 1.6;
 }
 
-.upload-text {
+.photo-callout-text strong {
     color: #f5a623;
-    font-size: 1.1rem;
-    font-weight: 700;
-    margin-bottom: 6px;
-}
-
-.upload-subtext {
-    color: #7a90b8;
-    font-size: 0.85rem;
-}
-
-.file-count {
-    margin-top: 12px;
-    color: #f5a623;
-    font-size: 0.9rem;
-    font-weight: 600;
+    display: block;
+    margin-bottom: 5px;
+    font-size: 1rem;
 }
 
 .disclaimer {
