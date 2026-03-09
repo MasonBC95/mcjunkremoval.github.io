@@ -83,29 +83,109 @@
         </div>
     </section>
 
-    <!-- PRICING -->
+   <!-- PRICING -->
     <section class="pricing" id="pricing">
         <div class="section-container">
             <h2>Transparent Pricing</h2>
-            <p class="section-sub">We charge by how much space your items take up in our truck. No hidden fees.</p>
-            <div class="pricing-grid">
-                <div class="price-card">
-                    <h3>Minimum Load</h3>
-                    <div class="price">Starting at $99</div>
-                    <p>A few small items — boxes, bags, small furniture.</p>
+            <p class="section-sub">We charge by how much space your items take up in our truck. Dump fees and fuel always included — no surprises.</p>
+
+            <!-- LOAD BAR VISUAL -->
+            <div class="load-bar-wrapper">
+                <div class="load-bar-label">🚛 How full is your truck? Click a section.</div>
+                <div class="load-bar-row">
+                    <div class="truck-icon">🚛</div>
+                    <div class="load-bar">
+                        <div class="load-segment seg-1" onclick="selectTier(0)" id="ts-0">
+                            <div class="seg-fraction">¼</div>
+                            <div class="seg-cuft">~100 cu ft</div>
+                        </div>
+                        <div class="load-segment seg-2" onclick="selectTier(1)" id="ts-1">
+                            <div class="seg-fraction">½</div>
+                            <div class="seg-cuft">~200 cu ft</div>
+                        </div>
+                        <div class="load-segment seg-3" onclick="selectTier(2)" id="ts-2">
+                            <div class="seg-fraction">¾</div>
+                            <div class="seg-cuft">~300 cu ft</div>
+                        </div>
+                        <div class="load-segment seg-4" onclick="selectTier(3)" id="ts-3">
+                            <div class="seg-fraction">Full</div>
+                            <div class="seg-cuft">~400 cu ft</div>
+                        </div>
+                    </div>
                 </div>
-                <div class="price-card featured">
-                    <h3>Half Truck</h3>
-                    <div class="price">Starting at $249</div>
-                    <p>Most popular. A room's worth of furniture or a full garage cleanout.</p>
-                </div>
-                <div class="price-card">
-                    <h3>Full Truck</h3>
-                    <div class="price">Starting at $449</div>
-                    <p>Whole home or estate cleanouts, large volumes of debris.</p>
+                <div class="bar-end-labels">
+                    <span class="bar-end-label">Empty</span>
+                    <span class="bar-end-label">Full Truck</span>
                 </div>
             </div>
-            <p class="pricing-note">Final price determined on-site based on actual volume. Text us photos for an upfront estimate!</p>
+
+            <!-- PRICING TIER CARDS -->
+            <div class="pricing-tiers">
+                <div class="tier-card" onclick="selectTier(4)" id="tc-4">
+                    <h3>Single Item</h3>
+                    <div class="tier-price">$80</div>
+                    <div class="tier-desc">1–2 items only</div>
+                    <div class="tier-volume">Couch, appliance, etc.</div>
+                </div>
+                <div class="tier-card" onclick="selectTier(5)" id="tc-5">
+                    <h3>Minimum Load</h3>
+                    <div class="tier-price">$160</div>
+                    <div class="tier-desc">Small mixed load</div>
+                    <div class="tier-volume">Bags, boxes & small items</div>
+                </div>
+                <div class="tier-card" onclick="selectTier(0)" id="tc-0">
+                    <h3>¼ Truck</h3>
+                    <div class="tier-price">$199</div>
+                    <div class="tier-desc">Small cleanout</div>
+                    <div class="tier-volume">~100 cu ft</div>
+                </div>
+                <div class="tier-card" onclick="selectTier(1)" id="tc-1">
+                    <h3>½ Truck</h3>
+                    <div class="tier-price">$299</div>
+                    <div class="tier-desc">Most popular</div>
+                    <div class="tier-volume">~200 cu ft</div>
+                </div>
+                <div class="tier-card" onclick="selectTier(2)" id="tc-2">
+                    <h3>¾ Truck</h3>
+                    <div class="tier-price">$399</div>
+                    <div class="tier-desc">Large cleanout</div>
+                    <div class="tier-volume">~300 cu ft</div>
+                </div>
+                <div class="tier-card" onclick="selectTier(3)" id="tc-3">
+                    <h3>Full Truck</h3>
+                    <div class="tier-price">$549</div>
+                    <div class="tier-desc">Full property</div>
+                    <div class="tier-volume">~400 cu ft</div>
+                </div>
+            </div>
+
+            <!-- DETAIL PANEL -->
+            <div class="tier-detail" id="tier-detail"></div>
+
+            <!-- ADD-ONS -->
+            <div class="addons-section">
+                <h3>➕ Additional Item Fees</h3>
+                <div class="addons-grid">
+                    <div class="addon-item">
+                        <span class="addon-name">🧊 Refrigerator / Freezer</span>
+                        <span class="addon-price">+$25</span>
+                    </div>
+                    <div class="addon-item">
+                        <span class="addon-name">❄️ Window AC Unit</span>
+                        <span class="addon-price">+$25</span>
+                    </div>
+                    <div class="addon-item">
+                        <span class="addon-name">🛁 Hot Tub Removal</span>
+                        <span class="addon-price">Call for quote</span>
+                    </div>
+                    <div class="addon-item">
+                        <span class="addon-name">🏗️ Heavy Concrete / Dirt</span>
+                        <span class="addon-price">Call for quote</span>
+                    </div>
+                </div>
+            </div>
+
+            <p class="pricing-footer-note">⚠️ All prices include labor, fuel, and dump fees. Final price confirmed on-site before we begin — no surprises, ever.</p>
         </div>
     </section>
 
@@ -187,7 +267,67 @@
         </div>
     </footer>
 
-    
+    <script>
+        const tiers = [
+            {
+                label: "¼ Truck Load", price: "$199", volume: "Up to ~100 cubic feet",
+                desc: "Perfect for a small bedroom cleanout, a few pieces of furniture, or a partial garage clear-out.",
+                includes: ["All loading & labor", "Fuel & transportation", "Dump/disposal fees", "Same-day available"]
+            },
+            {
+                label: "½ Truck Load", price: "$299", volume: "Up to ~200 cubic feet",
+                desc: "Our most popular option. Handles a full room's worth of furniture, a garage cleanout, or a mix of appliances and junk.",
+                includes: ["All loading & labor", "Fuel & transportation", "Dump/disposal fees", "Same-day available"]
+            },
+            {
+                label: "¾ Truck Load", price: "$399", volume: "Up to ~300 cubic feet",
+                desc: "Great for larger cleanouts — multi-room furniture, big garage or shed cleanouts, or estate items.",
+                includes: ["All loading & labor", "Fuel & transportation", "Dump/disposal fees", "Same-day available"]
+            },
+            {
+                label: "Full Truck Load", price: "$549", volume: "Up to ~400 cubic feet",
+                desc: "Full property or estate cleanouts, major renovation debris, or hoarding situations. We handle it all.",
+                includes: ["All loading & labor", "Fuel & transportation", "Dump/disposal fees", "Same-day available"]
+            },
+            {
+                label: "Single Item Pickup", price: "$80", volume: "1-2 items only",
+                desc: "Just need one or two things gone? We'll grab it and go.",
+                includes: ["All loading & labor", "Fuel & transportation", "Dump/disposal fees"]
+            },
+            {
+                label: "Minimum Load", price: "$160", volume: "Small mixed load",
+                desc: "A step up from a single item — perfect for a handful of bags, boxes, and small miscellaneous junk you just need gone.",
+                includes: ["All loading & labor", "Fuel & transportation", "Dump/disposal fees"]
+            }
+        ];
+
+        function selectTier(index) {
+            document.querySelectorAll('.tier-card').forEach(c => c.classList.remove('active'));
+            document.querySelectorAll('.load-segment').forEach(s => s.classList.remove('active'));
+            const card = document.getElementById(`tc-${index}`);
+            if (card) card.classList.add('active');
+            if (index < 4) {
+                const ts = document.getElementById(`ts-${index}`);
+                if (ts) ts.classList.add('active');
+            }
+            const tier = tiers[index];
+            const detail = document.getElementById('tier-detail');
+            detail.innerHTML = `
+                <div class="tier-detail-left">
+                    <h3>${tier.label}</h3>
+                    <div class="detail-price">${tier.price}</div>
+                    <p>${tier.desc}</p>
+                    <p style="color:#aab8d4; font-size:0.8rem;">${tier.volume}</p>
+                </div>
+                <div class="tier-detail-right">
+                    <div class="detail-includes">Always included:</div>
+                    <ul>${tier.includes.map(i => `<li>${i}</li>`).join('')}</ul>
+                </div>
+            `;
+            detail.classList.add('visible');
+            detail.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+    </script>
 
 </body>
 </html>
